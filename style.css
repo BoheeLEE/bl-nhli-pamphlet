@@ -239,8 +239,6 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   justify-self: stretch;
-  
-  outline: 1px solid hotpink;
   min-height: 100%;
 
   & .page {
