@@ -145,10 +145,6 @@ body {
   padding: 2rem 30px;
 }
 
-.category-publishing {
-  border-color: var(--publishing-accent);
-  color: var(--publishing-fg);
-}
 
 .speaker-card-new {
 
@@ -315,6 +311,41 @@ body {
       border-color: var(--academia-accent);
     }
    }
+}
+
+.category-tag {
+  display: grid;
+  place-items: center;
+  font-size: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.25rem 1rem;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  max-width: min-content;;
+  
+  border-radius: 20px;
+}
+
+.category-publishing {
+  border-color: var(--publishing-accent);
+  color: var(--publishing-fg);
+}
+
+.category-academia {
+  border-color: var(--academia-accent);
+  color: var(--academia-fg);
+}
+
+.category-policy {
+  border-color: var(--policy-accent);
+  color: var(--policy-fg);
+}
+
+.category-industry {
+  border-color: var(--industry-accent);
+  color: var(--industry-fg);
 }
 
 .speaker-card-container {
