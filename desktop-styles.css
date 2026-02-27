@@ -23,7 +23,6 @@
 
 /* ===== CONTROLS ===== */
 
-
 /* ===== FLIP SCENE ===== */
 .flip-scene {
   width: 842px;
@@ -345,7 +344,7 @@
 
 .back-header {
   background: var(--navy);
-  padding: 12px 32px;
+  padding: 12px 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -363,14 +362,14 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--gold);
+  max-width: 24ch;
+  text-wrap: pretty;
 }
 
 .back-header-categories {
   display: flex;
   gap: 6px;
 }
-
-
 
 .speakers-grid {
   display: grid;
@@ -513,18 +512,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-.back-footer-text {
-  font-size: 8.5px;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.5px;
-}
+  & .back-footer-text {
+    font-size: 8.5px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.5px;
+  }
 
-.back-footer-hashtag {
-  font-size: 9px;
-  color: var(--gold);
-  letter-spacing: 1px;
+  & .back-footer-hashtag {
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
 }
 
 .hint {

@@ -25,7 +25,7 @@ const mobileSetup = () => {
         currentPage = ((pageNum % TOTAL) + TOTAL) % TOTAL; // Handle negative numbers
         mobileContainer.querySelector(`#mobile-page-${currentPage + 1}`).classList.add('active');
         mobileContainer.querySelector(`#indicator-${currentPage}`).classList.add('active');
-        document.getElementById('side-label').textContent = PAGE_LABELS[currentPage];
+        // document.getElementById('side-label').textContent = PAGE_LABELS[currentPage];
       }
 
       mobileContainer.querySelectorAll('.control-btn').forEach((btn) => {
@@ -43,4 +43,47 @@ const mobileSetup = () => {
       });
 };
 
+const setupDesktop = () => {
+  
+  const desktopContainer = document.querySelector('div.desktop');
+  const flipper = desktopContainer?.querySelector('.flipper');
+  const frontDot = desktopContainer?.querySelector('.indicator-dot.front');
+  const backDot = desktopContainer?.querySelector('.indicator-dot.back');
+  const flipBtn = desktopContainer?.querySelector('.control-btn');
+
+  if (!desktopContainer || !flipper || !frontDot || !backDot || !flipBtn) return;
+
+  let isFlipped = flipper.classList.contains('flipped') || false;
+  function toggleFlip() {
+    isFlipped = !isFlipped;
+    updateState();
+  }
+
+  function showFront() {
+    if (!isFlipped) return; // Already showing front
+    isFlipped = false;
+    updateState();
+  }
+
+  function showBack() {
+    if (isFlipped) return; // Already showing back
+    isFlipped = true;
+    updateState();
+  }
+
+  flipBtn.addEventListener('click', toggleFlip);
+  frontDot.addEventListener('click', showFront);
+  backDot.addEventListener('click', showBack);
+
+  function updateState() {
+    flipper.classList.toggle('flipped', isFlipped);
+    frontDot.classList.toggle('active', !isFlipped);
+    backDot.classList.toggle('active', isFlipped);
+    flipBtn.classList.toggle('flipped', isFlipped);  
+  }
+
+  updateState(); // Initialize state on page load
+};
+
 mobileSetup();
+setupDesktop();
